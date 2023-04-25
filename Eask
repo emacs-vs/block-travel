@@ -2,7 +2,7 @@
          "0.1.0"
          "Move to previous/next blank line")
 
-(website-url "https://github.com/jcs-elpa/elenv")
+(website-url "https://github.com/jcs-elpa/block-travel")
 (keywords "convenience")
 
 (package-file "block-travel.el")
