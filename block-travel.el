@@ -31,13 +31,24 @@
 
 ;;; Code:
 
+(defgroup block-travel nil
+  "Move to previous/next blank line."
+  :prefix "block-travel-"
+  :group 'tool
+  :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/block-travel"))
+
+(defcustom block-travel-regex "^[[:space:]]*\n"
+  "Regex to navigate to blank lines."
+  :type 'string
+  :group 'block-travel)
+
 ;;
 ;; (@* "Util" )
 ;;
 
 (defun block-travel--current-line-empty-p ()
   "Current line empty, but accept spaces/tabs in there.  (not absolute)."
-  (save-excursion (beginning-of-line) (looking-at "[[:space:]\t]*$")))
+  (save-excursion (beginning-of-line) (looking-at "[[:space:]]*$")))
 
 ;;
 ;; (@* "Core" )
@@ -47,7 +58,7 @@
 (defun block-travel-up (&optional _)
   "Move to the previous line containing nothing but whitespaces or tabs."
   (interactive "^P")
-  (let ((sr-pt (save-excursion (re-search-backward "^[ \t]*\n" nil t))))
+  (let ((sr-pt (save-excursion (re-search-backward block-travel-regex nil t))))
     (goto-char (or sr-pt (point-min)))))
 
 ;;;###autoload
@@ -55,7 +66,7 @@
   "Move to the next line containing nothing but whitespaces or tabs."
   (interactive "^P")
   (when (block-travel--current-line-empty-p) (forward-line 1))
-  (let ((sr-pt (save-excursion (re-search-forward "^[ \t]*\n" nil t))))
+  (let ((sr-pt (save-excursion (re-search-forward block-travel-regex nil t))))
     (goto-char (or sr-pt (point-max)))
     (when sr-pt (forward-line -1))))
 
