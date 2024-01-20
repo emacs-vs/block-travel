@@ -4,7 +4,7 @@
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; URL: https://github.com/jcs-elpa/block-travel
+;; URL: https://github.com/emacs-vs/block-travel
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "26.1"))
 ;; Keywords: convenience
@@ -35,7 +35,7 @@
   "Move to previous/next blank line."
   :prefix "block-travel-"
   :group 'tool
-  :link '(url-link :tag "Repository" "https://github.com/jcs-elpa/block-travel"))
+  :link '(url-link :tag "Repository" "https://github.com/emacs-vs/block-travel"))
 
 (defcustom block-travel-regex "^[[:space:]]*\n"
   "Regex to navigate to blank lines."

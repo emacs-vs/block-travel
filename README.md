@@ -5,7 +5,7 @@
 # block-travel
 > Move to previous/next blank line
 
-[![CI](https://github.com/jcs-elpa/block-travel/actions/workflows/test.yml/badge.svg)](https://github.com/jcs-elpa/block-travel/actions/workflows/test.yml)
+[![CI](https://github.com/emacs-vs/block-travel/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-vs/block-travel/actions/workflows/test.yml)
 
 ## 🔨 Usage
 
