@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "block-travel"
          "0.1.0"
          "Move to previous/next blank line")
